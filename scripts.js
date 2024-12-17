@@ -105,17 +105,35 @@ button2.addEventListener("click", () => {
 const button3 = document.createElement("button")
 const ul = document.createElement("ul")
 
-body.appendChild(button3)
-button3.textContent = "liste"
+body.appendChild(button3) 
+button3.textContent = "Add"
 body.appendChild(ul)
 
 button3.addEventListener("click", () => {
-    
     const li = document.createElement("li")
     ul.appendChild(li)
     li.textContent = "Nouvel élément"
-    
 })
 
 
+const button4 = document.createElement("button")
+const li = document.createElement("li")
 
+body.appendChild(button4)
+button4.textContent = "Remove"
+body.appendChild(ul)
+
+button4.addEventListener("click", () => {
+    ul.removeChild(ul.firstElementChild)
+})
+
+function consol(bouton) {
+    console.log(bouton);
+}
+for (i = 1; i <= 3; i++){
+    const button = document.createElement("button")
+    button.textContent = "bouton " + i
+    button.addEventListener("click", () => consol(button))
+    body.appendChild(button) 
+}
+    
